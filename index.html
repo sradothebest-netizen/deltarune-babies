@@ -3,43 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title>DELTARUNE BABIES FINALE</title>
-
-    <style>
-        html, body {
-            margin: 0;
-            padding: 0;
-            background: black;
-        }
-
-        #game {
-            width: 800px;
-            height: 600px;
-            margin: 20px auto;
-        }
-    </style>
 </head>
 
-<body>
+<body style="background: black;">
 
-<div id="game"></div>
+<script src="./ruffle/ruffle.js"></script>
 
 <script>
 window.RufflePlayer = window.RufflePlayer || {};
 
-window.addEventListener("DOMContentLoaded", function() {
-    let ruffle = window.RufflePlayer.newest();
-    let player = ruffle.createPlayer();
+window.addEventListener("load", function() {
+    const ruffle = window.RufflePlayer.newest();
+    const player = ruffle.createPlayer();
 
     player.style.width = "800px";
     player.style.height = "600px";
 
-    document.getElementById("game").appendChild(player);
+    document.body.appendChild(player);
 
-    player.ruffle().load("game.swf");
+    player.ruffle().load("./game.swf");
 });
 </script>
-
-<script src="ruffle/ruffle.js"></script>
 
 </body>
 </html>
