@@ -2,30 +2,43 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Ruffle Test</title>
+    <title>DELTARUNE BABIES FINALE</title>
+
+    <style>
+        body {
+            margin: 0;
+            background: black;
+            text-align: center;
+        }
+
+        #game {
+            width: 800px;
+            height: 600px;
+            margin: 20px auto;
+        }
+    </style>
 
     <script src="./Ruffle/ruffle.js"></script>
-
-    <script>
-        window.RufflePlayer = window.RufflePlayer || {};
-
-        window.addEventListener("DOMContentLoaded", function () {
-            console.log("RufflePlayer:", window.RufflePlayer);
-            console.log("newest:", window.RufflePlayer.newest);
-
-            if (window.RufflePlayer.newest) {
-                const ruffle = window.RufflePlayer.newest();
-                console.log("Ruffle source:", ruffle);
-            }
-        });
-    </script>
 </head>
 
-<body style="background:black;color:white;font-family:monospace">
+<body>
 
-<h1>RUFFLE TEST</h1>
+<div id="game"></div>
 
-<p>Open the console with F12.</p>
+<script>
+window.addEventListener("DOMContentLoaded", function () {
+    const ruffle = window.RufflePlayer.newest();
+
+    const player = ruffle.createPlayer();
+
+    player.style.width = "800px";
+    player.style.height = "600px";
+
+    document.getElementById("game").appendChild(player);
+
+    player.ruffle().load("./deltababiesfinale.swf");
+});
+</script>
 
 </body>
 </html>
