@@ -1,30 +1,31 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="UTF-8">
-    <title>DELTARUNE BABIES FINALE</title>
+    <title>Ruffle Test</title>
 
     <script src="./Ruffle/ruffle.js"></script>
 
-    <style>
-        body {
-            margin: 0;
-            background: black;
-            text-align: center;
-        }
-    </style>
+    <script>
+        window.RufflePlayer = window.RufflePlayer || {};
+
+        window.addEventListener("DOMContentLoaded", function () {
+            console.log("RufflePlayer:", window.RufflePlayer);
+            console.log("newest:", window.RufflePlayer.newest);
+
+            if (window.RufflePlayer.newest) {
+                const ruffle = window.RufflePlayer.newest();
+                console.log("Ruffle source:", ruffle);
+            }
+        });
+    </script>
 </head>
 
-<body>
+<body style="background:black;color:white;font-family:monospace">
 
-    <object
-        data="./deltababiesfinale.swf"
-        type="application/x-shockwave-flash"
-        width="800"
-        height="600">
-    </object>
+<h1>RUFFLE TEST</h1>
+
+<p>Open the console with F12.</p>
 
 </body>
-
 </html>
