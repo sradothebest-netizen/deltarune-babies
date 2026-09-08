@@ -18,6 +18,14 @@
         }
     </style>
 
+    <script>
+        window.RufflePlayer = window.RufflePlayer || {};
+
+        window.RufflePlayer.config = {
+            publicPath: "./Ruffle/"
+        };
+    </script>
+
     <script src="./Ruffle/ruffle.js"></script>
 </head>
 
@@ -28,7 +36,6 @@
 <script>
 window.addEventListener("DOMContentLoaded", function () {
     const ruffle = window.RufflePlayer.newest();
-
     const player = ruffle.createPlayer();
 
     player.style.width = "800px";
@@ -38,10 +45,6 @@ window.addEventListener("DOMContentLoaded", function () {
 
     player.ruffle().load("./deltababiesfinale.swf");
 });
-</script>
-
-</body>
-</html>
 </script>
 
 </body>
